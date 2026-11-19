@@ -14,7 +14,7 @@
 <style>
 :root{
   --navy:#1B3A6B; --navy-dark:#14284B; --navy-hover:#24497F;
-  --green:#3BA845; --green-light:#6CC04A; --green-hover:#2F8A38;
+  --green:#16913A; --green-light:#6CC04A; --green-hover:#0F7A30;
   --ink:#f4f8ff; --ink-2:rgba(226,236,252,.76); --ink-3:rgba(206,220,244,.55);
   --page:#081428; --line:rgba(170,200,250,.15);
   --sans:"Inter Tight",system-ui,sans-serif; --serif:"Instrument Serif",Georgia,serif; --mono:"Fira Code",ui-monospace,monospace;
@@ -38,7 +38,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .navr{display:flex;align-items:center;gap:8px}
 .btn{display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 20px;border-radius:11px;font-size:15.5px;font-weight:500;white-space:nowrap;transition:transform .25s,background .3s,box-shadow .3s}
 .btn:hover{transform:translateY(-2px)}
-.btn.fill{background:var(--green);box-shadow:0 8px 26px rgba(59,168,69,.35)}
+.btn.fill{background:var(--green);box-shadow:0 8px 26px rgba(22,145,58,.35)}
 .btn.fill:hover{background:var(--green-hover)}
 .btn.ghost{border:1px solid rgba(226,236,255,.4);background:rgba(255,255,255,.05);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
 .btn.ghost:hover{background:rgba(255,255,255,.12)}
@@ -171,7 +171,7 @@ body{color:var(--ink)}
 .btn.ghost:hover{background:var(--navy);color:#fff}
 
 /* stage: white with a faint navy/mint wash; the film sits in a rounded panel on the right */
-.stage{background:radial-gradient(ellipse at 80% 20%,rgba(27,58,107,.07),transparent 55%),radial-gradient(ellipse at 10% 90%,rgba(59,168,69,.08),transparent 50%),#fff}
+.stage{background:radial-gradient(ellipse at 80% 20%,rgba(27,58,107,.07),transparent 55%),radial-gradient(ellipse at 10% 90%,rgba(22,145,58,.08),transparent 50%),#fff}
 .scrim{display:none}
 #cv,.poster{left:40vw;right:auto;top:96px;bottom:auto;width:57vw;height:calc(100% - 140px);border-radius:28px;background-color:#0a1a3a;box-shadow:0 40px 90px -30px rgba(20,40,75,.45),0 0 0 1px rgba(20,40,75,.06)}
 .poster{background-size:cover}
@@ -182,7 +182,7 @@ body{color:var(--ink)}
 .beat li b{color:var(--navy-dark)}
 .beat li i{color:var(--green)}
 .chip{color:var(--navy);background:var(--tint);border-color:#dbe3ef;backdrop-filter:none;-webkit-backdrop-filter:none}
-.chip.live::before{background:var(--green);box-shadow:0 0 8px rgba(59,168,69,.6)}
+.chip.live::before{background:var(--green);box-shadow:0 0 8px rgba(22,145,58,.6)}
 /* chapter rail sits inside the film panel */
 .rail{right:calc(3vw + 22px);color:rgba(255,255,255,.62)}
 .rail a.on{color:#8fe07a}
@@ -221,6 +221,22 @@ body{color:var(--ink)}
 }
 @media (max-width:820px) and (max-height:700px){
   .beat p{display:none}
+}
+
+/* ---------- trusted partners (logo strip) ---------- */
+.tp{max-width:1100px;margin:64px auto 0;text-align:center}
+.tp-eb{font-family:"Fira Code",ui-monospace,monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#0F7A30}
+.tp-h{font-family:"Inter Tight",system-ui,sans-serif;font-weight:400;font-size:clamp(22px,2.4vw,30px);letter-spacing:-.02em;color:#14284B;margin-top:10px}
+.tp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+.tp-card{margin:0;background:#fff;border:1px solid #E3E7EE;border-radius:16px;padding:22px 22px 16px;box-shadow:0 14px 34px -22px rgba(20,40,75,.35);transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s}
+.tp-card:hover{transform:translateY(-4px);border-color:rgba(22,145,58,.4);box-shadow:0 22px 44px -24px rgba(20,40,75,.4)}
+.tp-logo{height:86px;display:grid;place-items:center}
+.tp-logo img{max-width:100%;max-height:72px;width:auto;height:auto;object-fit:contain}
+.tp-card figcaption{margin-top:12px;padding-top:12px;border-top:1px solid #EEF2F8;font-family:"Inter Tight",system-ui,sans-serif;font-size:14.5px;font-weight:500;color:#14284B}
+@media (max-width:820px){
+  .tp{margin-top:44px}
+  .tp-grid{grid-template-columns:1fr;gap:12px}
+  .tp-logo{height:70px}.tp-logo img{max-height:58px}
 }
 </style>
 </head>
@@ -311,6 +327,15 @@ body{color:var(--ink)}
         <div><b>5</b><span>open roles in Dubai</span></div>
         <div><b>100%</b><span>focus on compliance</span></div>
       </div>
+      <div class="tp reveal" id="partners">
+    <div class="tp-eb">Our trusted partners</div>
+    <h3 class="tp-h">Partnered with the UAE’s leading Islamic banks</h3>
+    <div class="tp-grid">
+      <figure class="tp-card"><div class="tp-logo"><img src="partners/partner-dib.webp" alt="Dubai Islamic Bank logo" loading="lazy" width="560" height="160"></div><figcaption>Dubai Islamic Bank</figcaption></figure>
+      <figure class="tp-card"><div class="tp-logo"><img src="partners/partner-ei.webp" alt="Emirates Islamic logo" loading="lazy" width="553" height="160"></div><figcaption>Emirates Islamic</figcaption></figure>
+      <figure class="tp-card"><div class="tp-logo"><img src="partners/partner-sib.webp" alt="Sharjah Islamic Bank logo" loading="lazy" width="525" height="160"></div><figcaption>Sharjah Islamic Bank</figcaption></figure>
+    </div>
+  </div>
     </div>
   </section>
 
